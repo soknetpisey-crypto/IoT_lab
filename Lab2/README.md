@@ -19,5 +19,5 @@ this lab focuses on developing an ESP32- based IoT system that integrates a web 
 - Add two buttons (ON/OFF) on the web page.
 - When clicked, LED on GPIO2 should turn ON or OfF.
 - Evidence: short video showing button click -> LED changes.
-  
+  <img width="960" height= "1280" alt="image" scr="https://github.com/nsmony/IoT_lab/blob/main/Lab2/IMG_0254.MOV" />
 
