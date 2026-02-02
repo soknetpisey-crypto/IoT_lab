@@ -9,5 +9,5 @@ this lab focuses on developing an ESP32- based IoT system that integrates a web 
 -	USB cable + laptop with Thonny
 - Wi-fi access
 ### Wiring Connection
-<img width="960" height="1280" alt="image" src="" />
+<img width="960" height="1280" alt="image" src="https://github.com/nsmony/IoT_lab/blob/main/Lab2/lab2.jpg" />
 
