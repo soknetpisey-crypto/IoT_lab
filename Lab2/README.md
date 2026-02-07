@@ -20,6 +20,13 @@ this lab focuses on developing an ESP32- based IoT system that integrates a web 
 | VCC (+) | VCC/5V |
 | DATA (I/O) | GPIO 4 (D4) |
 | GND (-) | GND |
+#### Ultrasonic Sensor → ESP32
+| DHT22 Pin | ESP32 Pin |
+|----------|-----------|
+| VCC | VCC/5V |
+| Tring | GPIO 27 (D27) |
+| Echo | GPIO 26 (D26) |
+| GND | GND |
 ### 2. Micropython Environment
 - Open **Thonny IDE** on your laptop
 - Connect the ESP32 via USB
