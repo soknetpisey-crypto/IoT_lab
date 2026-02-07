@@ -10,8 +10,7 @@ this lab focuses on developing an ESP32- based IoT system that integrates a web 
 -	Breadboard, jumper wires
 -	USB cable + laptop with Thonny
 - Wi-fi access
-## Wiring Connection
-## Set up instructions
+## Wiring Connection and Set up instructions
 ### 1. Hardware Setup
 - Connect all components according to the wiring diagram
 - Ensure the ESP32 is properly powered via USB
