@@ -1,6 +1,8 @@
 # Lab 2 : IoT Webserver with LED, Sensors, and LCD Control
 this lab focuses on developing an ESP32- based IoT system that integrates a web interface with an LCD display. Users can interact through the web server to control the LCD, monitor sensor data, and send custom messages to be displayed on the screen. 
 ## Equipment
+<img width="960" height="1280" alt="image" src="https://github.com/user-attachments/assets/4d5c6986-be26-409d-a70d-7e0b1fc36c4a" />
+
 - ESP32 Dev Board (Micropython firmware flashed)
 - DHT11 sensor (temperature/humidity)
 - HC-SR04 ultrasonic distance sensor
