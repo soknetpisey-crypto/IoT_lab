@@ -232,7 +232,7 @@ The values should automatically refresh every 1–2 seconds. <br>
 ### Task 3 - Sensor
 Add two buttons on the web page:
 - Show Distance → Displays the measured distance on LCD line 1.
-- Show Temp → Displays the temperature on LCD line 2.
+- Show Temp → Displays the temperature on LCD line 2. <br>
 When each button is clicked, the corresponding sensor value should appear on the LCD.
 <img width="1274" height="712" alt="Screenshot 2026-02-07 213746" src="https://github.com/user-attachments/assets/ec18c94a-f02a-45ee-ba7c-2984617fdac2" />
 
