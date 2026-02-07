@@ -218,7 +218,7 @@ class I2cLcd(LcdApi):
 ### 6. Running the Server
 1. Reset the ESP32
 2. Wait for Wi-Fi connection
-3. Note the **IP address** displayed in the serial monitor
+3. Note the **IP address** displayed in both Thonny and LCD
 4. Open a web browser and navigate
 ## Tasks and Checkpoints
 ### Task 1 - LED Control
