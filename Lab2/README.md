@@ -53,4 +53,8 @@ Upload the following libraries to your ESP32:
 2. Wait for Wi-Fi connection
 3. Note the **IP address** displayed in the serial monitor
 4. Open a web browser and navigate
-
+## Tasks and Checkpoints
+### Task 1 - LED Control
+### Task 2 - Sensor Read
+### Task 3 - Sensor
+### Task 4 - Textbox
