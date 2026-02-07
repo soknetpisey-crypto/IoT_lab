@@ -56,6 +56,9 @@ Upload the following libraries to your ESP32:
 4. Open a web browser and navigate
 ## Tasks and Checkpoints
 ### Task 1 - LED Control
+Create a web page with two buttons: ON and OFF.
+When the ON button is clicked, the LED connected to GPIO2 turns ON.
+When the OFF button is clicked, the LED turns OFF.
 Evidence: https://drive.google.com/drive/folders/13wvs1C-SneUwzVL0l1u5jbmjctAps9cX?usp=sharing
 ### Task 2 - Sensor Read
 <img width="1280" height="626" alt="image" src="https://github.com/user-attachments/assets/46d6f38b-8bb5-46be-9662-6941ef75080b" />
