@@ -42,6 +42,10 @@ this lab focuses on developing an ESP32- based IoT system that integrates a web 
 - Select the correct COM port for your ESP32
 ### 3. Wi-fi Configuration
 Edit each file with your wi-fi credentials:
+```python
+ssid = ""
+password = ""
+```
 ### 4. Required Libraries
 Upload the following libraries to your ESP32:
 - lcd_api.py
