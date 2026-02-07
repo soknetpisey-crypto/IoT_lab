@@ -79,7 +79,7 @@ Add a textbox and a “Send” button on the web page.
 User types any custom text into the textbox.
 When Send is clicked, the text is displayed on the LCD.
 If the text is longer than 16 characters, it should scroll on the LCD.
-Evidence: https://drive.google.com/drive/folders/13wvs1C-SneUwzVL0l1u5jbmjctAps9cX?usp=sharing
+\nEvidence: https://drive.google.com/drive/folders/13wvs1C-SneUwzVL0l1u5jbmjctAps9cX?usp=sharing
 
 ### Wire Diagram
 <img width="3970" height="8192" alt="ESP32 LCD HTTP Route Flow-2026-02-05-053536" src="https://github.com/user-attachments/assets/c5d4d7cc-3fd0-452a-8eeb-5a65f73bbad1" />
