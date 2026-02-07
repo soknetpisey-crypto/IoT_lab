@@ -4,7 +4,7 @@ this lab focuses on developing an ESP32- based IoT system that integrates a web 
 <img width="960" height="1280" alt="image" src="https://github.com/user-attachments/assets/4d5c6986-be26-409d-a70d-7e0b1fc36c4a" />
 
 - ESP32 Dev Board (Micropython firmware flashed)
-- DHT11 sensor (temperature/humidity)
+- DHT22 sensor (temperature/humidity)
 - HC-SR04 ultrasonic distance sensor
 -	LCD 16x2 with I2C backpack
 -	Breadboard, jumper wires
@@ -57,7 +57,10 @@ Upload the following libraries to your ESP32:
 4. Open a web browser and navigate
 ## Tasks and Checkpoints
 ### Task 1 - LED Control
+Evidence: https://drive.google.com/drive/folders/13wvs1C-SneUwzVL0l1u5jbmjctAps9cX?usp=sharing
 ### Task 2 - Sensor Read
+<img width="1280" height="626" alt="image" src="https://github.com/user-attachments/assets/46d6f38b-8bb5-46be-9662-6941ef75080b" />
+
 ### Task 3 - Sensor
 ### Task 4 - Textbox
 ### Wire Diagram
