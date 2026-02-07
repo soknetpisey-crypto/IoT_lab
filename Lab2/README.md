@@ -62,9 +62,9 @@ When the OFF button is clicked, the LED turns OFF.
 Evidence: https://drive.google.com/drive/folders/13wvs1C-SneUwzVL0l1u5jbmjctAps9cX?usp=sharing
 
 ### Task 2 - Sensor Read
-Read data from the DHT11 temperature sensor and the ultrasonic distance sensor.
-Display the temperature and distance values on the web page.
-The values should automatically refresh every 1–2 seconds.
+Read data from the DHT11 temperature sensor and the ultrasonic distance sensor. <br>
+Display the temperature and distance values on the web page. <br>
+The values should automatically refresh every 1–2 seconds. <br>
 <img width="1280" height="626" alt="image" src="https://github.com/user-attachments/assets/46d6f38b-8bb5-46be-9662-6941ef75080b" />
 
 ### Task 3 - Sensor
@@ -75,11 +75,11 @@ When each button is clicked, the corresponding sensor value should appear on the
 <img width="1274" height="712" alt="Screenshot 2026-02-07 213746" src="https://github.com/user-attachments/assets/ec18c94a-f02a-45ee-ba7c-2984617fdac2" />
 
 ### Task 4 - Textbox
-Add a textbox and a “Send” button on the web page.
-User types any custom text into the textbox.
-When Send is clicked, the text is displayed on the LCD.
-If the text is longer than 16 characters, it should scroll on the LCD.
-\nEvidence: https://drive.google.com/drive/folders/13wvs1C-SneUwzVL0l1u5jbmjctAps9cX?usp=sharing
+Add a textbox and a “Send” button on the web page. <br>
+User types any custom text into the textbox. <br>
+When Send is clicked, the text is displayed on the LCD. <br>
+If the text is longer than 16 characters, it should scroll on the LCD. <br>
+Evidence: https://drive.google.com/drive/folders/13wvs1C-SneUwzVL0l1u5jbmjctAps9cX?usp=sharing
 
 ### Wire Diagram
 <img width="3970" height="8192" alt="ESP32 LCD HTTP Route Flow-2026-02-05-053536" src="https://github.com/user-attachments/assets/c5d4d7cc-3fd0-452a-8eeb-5a65f73bbad1" />
