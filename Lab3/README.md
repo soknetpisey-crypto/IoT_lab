@@ -13,6 +13,10 @@ An IR sensor is used to sense when an object approaches the system. Once detecti
 ### Task 1: IR Sensor Reading
 - Read IR sensor digital output using ESP32
 - Display IR status (Detected / Not Detected) on Blynk
+<img width="1603" height="804" alt="Screenshot 2026-02-09 130323" src="https://github.com/user-attachments/assets/68147d2a-2967-4055-9a20-edd63030996e" />
+
+<img width="1603" height="788" alt="image_2026-02-09_13-04-15" src="https://github.com/user-attachments/assets/36cdf195-dec0-43a1-b440-286cfcde0257" />
+
 ### Task 2: Servo Motor Control via Blynk
 ### Task 3: Automatic IR- Servo Action
 ### Task 4: TM1637 Display Integration
