@@ -24,4 +24,4 @@ Video Evidence: https://youtu.be/sCNMGhiOjLc?feature=shared
 ### Task 4: TM1637 Display Integration
 Video Evidence: https://youtu.be/w7w-R8_-Dso?feature=shared
 ### Task 5: Manual Override Mode
-
+Video Evidence: https://youtu.be/g4tDh4JYB_U?feature=shared
