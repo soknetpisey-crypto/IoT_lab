@@ -22,5 +22,6 @@ Video Evidence: https://youtu.be/4t-Uhp8_JVw?feature=shared
 ### Task 3: Automatic IR- Servo Action
 Video Evidence: https://youtu.be/sCNMGhiOjLc?feature=shared
 ### Task 4: TM1637 Display Integration
+Video Evidence: https://youtu.be/w7w-R8_-Dso?feature=shared
 ### Task 5: Manual Override Mode
 
