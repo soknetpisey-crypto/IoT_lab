@@ -20,6 +20,7 @@ An IR sensor is used to sense when an object approaches the system. Once detecti
 ### Task 2: Servo Motor Control via Blynk
 Video Evidence: https://youtu.be/4t-Uhp8_JVw?feature=shared
 ### Task 3: Automatic IR- Servo Action
+Video Evidence: https://youtu.be/sCNMGhiOjLc?feature=shared
 ### Task 4: TM1637 Display Integration
 ### Task 5: Manual Override Mode
 
