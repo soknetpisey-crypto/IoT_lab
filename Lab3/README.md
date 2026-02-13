@@ -22,18 +22,18 @@ An IR sensor is used to sense when an object approaches the system. Once detecti
 
 ### Task 2: Servo Motor Control via Blynk
 - Add a Blynk Slider widget to control servor position.
-- Slider position from 0 to 180 degree and the servo is moving following the slider.
+- Slider position from 0 to 180 degree and the servo is moving following the slider. <br>
 Video Evidence: https://youtu.be/4t-Uhp8_JVw?feature=shared
 ### Task 3: Automatic IR- Servo Action
 - When IR sensor detects an object, servo opens automatically.
-- After a short delay, servo returns to closed position.
+- After a short delay, servo returns to closed position. <br>
 Video Evidence: https://youtu.be/sCNMGhiOjLc?feature=shared
 ### Task 4: TM1637 Display Integration
 - Count the number of IR detection events.
 - Display the counter value on the TM1637 display.
-- Send the same value to Blynk numeric display widget.
+- Send the same value to Blynk numeric display widget. <br>
 Video Evidence: https://youtu.be/w7w-R8_-Dso?feature=shared
 ### Task 5: Manual Override Mode
 - Add a Blynk switch to enable/disable automic IR mode.
-- When manual mode is active, IR sensor is ignored.
+- When manual mode is active, IR sensor is ignored. <br>
 Video Evidence: https://youtu.be/g4tDh4JYB_U?feature=shared
