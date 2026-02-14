@@ -17,6 +17,13 @@ This lab aims to design and implement an ESP32-based IoT system using Micropytho
 | OUT | GPIO 12 (D12) |
 | GND | GND |
 
+#### Sevor Sensor → ESP32
+| Servo Sensor | ESP32 Pin |
+|----------|-----------|
+| Yellow Wire | GPIO 13 (D13) |
+| Red Wire | VCC/5V |
+| Brown Wire | GND |
+
 ## 4. System Description
 An IR sensor is used to sense when an object approaches the system. Once detection occurs, the ESP32 interprets the signal and drives a servo motor to mimic the opening of a gate or barrier. Every time an object is detected, a counter increases, and the updated count is a shown a TM1637 display while also being transmitted to the Blynk application for remote tracking. 
 ## 5. Tasks and Checkpoints
