@@ -9,12 +9,14 @@ This lab aims to design and implement an ESP32-based IoT system using Micropytho
 - USB cable for ESP32
 ## 3. Wiring Connection
   <img width="1073" height="613" alt="image" src="https://github.com/user-attachments/assets/ed7edab2-e898-4ef5-935a-cefc7140ee3a" />
+  
 #### IR Sensor → ESP32
 | IR Sensor | ESP32 Pin |
 |----------|-----------|
 | VCC | VCC/5V |
 | OUT | GPIO 12 (D12) |
 | GND | GND |
+
 ## 4. System Description
 An IR sensor is used to sense when an object approaches the system. Once detection occurs, the ESP32 interprets the signal and drives a servo motor to mimic the opening of a gate or barrier. Every time an object is detected, a counter increases, and the updated count is a shown a TM1637 display while also being transmitted to the Blynk application for remote tracking. 
 ## 5. Tasks and Checkpoints
