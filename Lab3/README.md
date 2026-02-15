@@ -43,7 +43,7 @@ An IR sensor is used to sense when an object approaches the system. Once detecti
 <img width="1603" height="788" alt="image_2026-02-09_13-04-15" src="https://github.com/user-attachments/assets/36cdf195-dec0-43a1-b440-286cfcde0257" />
 
 - Flowchart
-<img width="462" height="1280" alt="image" src="https://github.com/user-attachments/assets/task1.png" />
+<img width="462" height="1280" alt="image" src="Lab3/assets/task1.png" />
 
 
 ### Task 2: Servo Motor Control via Blynk
@@ -51,14 +51,14 @@ An IR sensor is used to sense when an object approaches the system. Once detecti
 - Slider position from 0 to 180 degree and the servo is moving following the slider. <br>
 - Video Evidence: https://youtu.be/4t-Uhp8_JVw?feature=shared
 - Flowchart
-<img width="346" height="1280" alt="image" src="https://github.com/user-attachments/assets/task2.png" />
+<img width="346" height="1280" alt="image" src="Lab3/assets/task2.png" />
 
 ### Task 3: Automatic IR- Servo Action
 - When IR sensor detects an object, servo opens automatically.
 - After a short delay, servo returns to closed position. <br>
 - Video Evidence: https://youtu.be/sCNMGhiOjLc?feature=shared
 - Flowchart
-<img width="403" height="1280" alt="image" src="https://github.com/user-attachments/assets/task3.png" />
+<img width="403" height="1280" alt="image" src="Lab3/assets/task3.png" />
 
 ### Task 4: TM1637 Display Integration
 - Count the number of IR detection events.
@@ -66,12 +66,12 @@ An IR sensor is used to sense when an object approaches the system. Once detecti
 - Send the same value to Blynk numeric display widget. <br>
 - Video Evidence: https://youtu.be/w7w-R8_-Dso?feature=shared
 - Flowchart
-<img width="222" height="1280" alt="image" src="https://github.com/user-attachments/assets/task4.png" />
+<img width="222" height="1280" alt="image" src="Lab3/assets/task4.png" />
 
 ### Task 5: Manual Override Mode
 - Add a Blynk switch to enable/disable automic IR mode.
 - When manual mode is active, IR sensor is ignored. <br>
 - Video Evidence: https://youtu.be/g4tDh4JYB_U?feature=shared
 - Flowchart
-<img width="475" height="1280" alt="image" src="https://github.com/user-attachments/assets/task5.png" />
+<img width="475" height="1280" alt="image" src="Lab3/assets/task5.png" />
 
