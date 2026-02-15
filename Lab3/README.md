@@ -1,4 +1,4 @@
-# Lab3: Iot Smart Gate Control With Blynk, IR Sensor, Servo Motor, and TM1637
+# Lab3: IoT Smart Gate Control With Blynk, IR Sensor, Servo Motor, and TM1637
 ## 1. Overview
 This lab aims to design and implement an ESP32-based IoT system using Micropython and the Blynk platform. The system integrates an IR sensor for object detection, a servo motor for physical actuation, and a TM1637 7-segment display for real-time local feedback. 
 ## 2. Equipment
