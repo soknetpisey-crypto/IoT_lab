@@ -43,7 +43,7 @@ An IR sensor is used to sense when an object approaches the system. Once detecti
 <img width="1603" height="788" alt="image_2026-02-09_13-04-15" src="https://github.com/user-attachments/assets/36cdf195-dec0-43a1-b440-286cfcde0257" />
 
 - Flowchart
-<img width="462" height="1280" alt="image" src="https://github.com/user-attachments/assets/f57f5306-97a0-4dd4-9fbe-a9b5af8f9b1d" />
+<img width="462" height="1280" alt="image" src="https://github.com/user-attachments/assets/task1.png" />
 
 
 ### Task 2: Servo Motor Control via Blynk
