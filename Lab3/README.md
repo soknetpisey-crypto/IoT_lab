@@ -199,7 +199,7 @@ BLYNK_API   = "http://blynk.cloud/external/api"
 4. Upload `tm1637.py` to ESP32
 5. Restart the ESP32
 
-## 5. Tasks and Checkpoints
+## 6. Tasks and Checkpoints
 ### Task 1: IR Sensor Reading
 - Read IR sensor digital output using ESP32
 - Display IR status (Detected / Not Detected) on Blynk
