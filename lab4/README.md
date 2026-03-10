@@ -1,63 +1,61 @@
-# 🌡️ LAB 4: Multi-Sensor IoT Monitoring with Grafana Dashboard
+# 🌡️ Lab 4: Multi-Sensor IoT Monitoring with Grafana Dashboard
 
-> **Platform:** ESP32 + MicroPython
-> **Tools:** Thonny | Node-RED | InfluxDB | Grafana
+> **Platform:** ESP32 + MicroPython  
+> **Tools:** Thonny · Node-RED · InfluxDB · Grafana
 
 ---
 
 ## 📋 Table of Contents
-- [Overview](#overview)
-- [Learning Outcomes](#learning-outcomes)
-- [Equipment](#equipment)
-- [System Architecture](#system-architecture)
-- [Task 1 — Gas Filtering (Moving Average)](#task-1--gas-filtering-moving-average)
-- [Task 2 — Gas Risk Classification](#task-2--gas-risk-classification)
-- [Task 3 — Fever Detection Logic](#task-3--fever-detection-logic)
-- [Task 4 — Pressure & Altitude Monitoring (Grafana)](#task-4--pressure--altitude-monitoring-grafana)
-- [Wiring](#wiring)
-- [MQTT Topics](#mqtt-topics)
-- [Node-RED Flow](#node-red-flow)
-- [InfluxDB Queries](#influxdb-queries)
-- [Grafana Dashboard](#grafana-dashboard)
-- [Project Structure](#project-structure)
-- [Setup Guide](#setup-guide)
+
+- [Overview](#-overview)
+- [Learning Outcomes](#-learning-outcomes)
+- [Equipment](#-equipment)
+- [System Architecture](#️-system-architecture)
+- [Task 1 — Gas Filtering (Moving Average)](#-task-1--gas-filtering-moving-average)
+- [Task 2 — Gas Risk Classification](#️-task-2--gas-risk-classification)
+- [Task 3 — Fever Detection Logic](#️-task-3--fever-detection-logic)
+- [Task 4 — Pressure & Altitude Monitoring (Grafana)](#-task-4--pressure--altitude-monitoring-grafana)
+- [Wiring](#-wiring)
+- [MQTT Topics](#-mqtt-topics)
+- [Node-RED Flow](#-node-red-flow)
+- [InfluxDB Queries](#️-influxdb-queries)
+- [Setup Guide](#️-setup-guide)
+- [Project Structure](#-project-structure)
 
 ---
 
 ## 🔍 Overview
 
-In this lab, a multi-sensor IoT monitoring system is designed and implemented using
-**ESP32** and **MicroPython**. The system integrates:
+This lab guides you through building a **multi-sensor IoT monitoring system** using an **ESP32** running **MicroPython**. Edge-side data processing is performed directly on the ESP32 before publishing sensor readings via MQTT to Node-RED, which stores them in InfluxDB and visualizes them in a Grafana dashboard.
 
-| Sensor | Type | Data |
-|--------|------|------|
-| **MLX90614** | I2C IR Thermometer | Ambient & Body Temperature, Fever Flag |
-| **MQ-5** | Analog Gas Sensor | Raw ADC, Moving Average, Voltage, Risk Level |
-| **BMP280** | I2C Barometric Sensor | Room Temperature, Pressure, Altitude |
-| **DS3231** | I2C Real-Time Clock | Timestamp (epoch) |
+### Sensors Used
 
-Edge logic processing is implemented **on the ESP32 before sending** to Node-RED,
-where data is stored in **InfluxDB** and visualized in **Grafana**.
+| Sensor | Interface | Data Collected |
+|---|---|---|
+| **MLX90614** | I2C (IR Thermometer) | Ambient temp, body temp, fever flag |
+| **MQ-5** | Analog (ADC) | Raw ADC, moving average, voltage, risk level |
+| **BMP280** | I2C (Barometric) | Room temp, pressure, altitude |
+| **DS3231** | I2C (RTC) | Unix epoch timestamp |
 
 ---
 
 ## 🎯 Learning Outcomes
 
-| # | Outcome |
-|---|---------|
-| 1 | Integrate multiple I2C and analog sensors with ESP32 |
-| 2 | Implement moving average filtering for noisy sensor signals |
-| 3 | Create rule-based classification logic at the edge |
-| 4 | Structure JSON packets for IoT transmission |
-| 5 | Store time-series data in InfluxDB |
-| 6 | Design dashboards using Grafana |
+By completing this lab, you will be able to:
+
+1. Integrate multiple I2C and analog sensors with an ESP32
+2. Implement a moving average filter to smooth noisy sensor signals
+3. Build rule-based classification logic at the edge
+4. Structure JSON payloads for IoT data transmission
+5. Store time-series data in InfluxDB via Node-RED
+6. Design and configure multi-panel dashboards in Grafana
 
 ---
 
 ## 🔧 Equipment
 
 | Component | Description | Interface |
-|-----------|-------------|-----------|
+|---|---|---|
 | ESP32 DevKit | Main microcontroller | — |
 | MQ-5 | Gas sensor (LPG, Methane, Propane) | Analog (ADC) |
 | MLX90614 | Contactless IR temperature sensor | I2C |
@@ -71,59 +69,57 @@ where data is stored in **InfluxDB** and visualized in **Grafana**.
 ## 🏗️ System Architecture
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│                         ESP32                                │
-│                                                              │
-│  ┌──────────┐  ┌───────────┐  ┌──────────┐  ┌──────────┐   │
-│  │  MQ-5    │  │ MLX90614  │  │  BMP280  │  │  DS3231  │   │
-│  │ (GPIO33) │  │  (I2C)    │  │  (I2C)   │  │  (I2C)   │   │
-│  └────┬─────┘  └─────┬─────┘  └────┬─────┘  └────┬─────┘   │
-│       │              │             │              │         │
-│       ▼              ▼             ▼              ▼         │
-│  ┌─────────────────────────────────────────────────────┐    │
-│  │              Edge Processing Logic                  │    │
-│  │  • Moving Average (Window=5)                        │    │
-│  │  • Risk Classification (SAFE/WARNING/DANGER)        │    │
-│  │  • Fever Detection (threshold 32.5°C)               │    │
-│  │  • Unix Epoch Conversion                            │    │
-│  └───────────────────────┬─────────────────────────────┘    │
-└──────────────────────────┼─────────────────────────────────-┘
-                           │ MQTT (HiveMQ)
-                           ▼
-              ┌────────────────────────┐
-              │        Node-RED        │
-              │  • Parse JSON payload  │
-              │  • Format for InfluxDB │
-              └────────────┬───────────┘
-                           │ HTTP Write
-                           ▼
-              ┌────────────────────────┐
-              │        InfluxDB        │
-              │   Database: aupp_lab   │
-              │  • mq5                 │
-              │  • mlx90614            │
-              │  • bmp280              │
-              └────────────┬───────────┘
-                           │ InfluxQL
-                           ▼
-              ┌────────────────────────┐
-              │        Grafana         │
-              │   8-Panel Dashboard    │
-              └────────────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│                            ESP32                            │
+│                                                             │
+│  ┌──────────┐  ┌───────────┐  ┌──────────┐  ┌──────────┐  │
+│  │  MQ-5    │  │ MLX90614  │  │  BMP280  │  │  DS3231  │  │
+│  │ (GPIO33) │  │  (I2C)    │  │  (I2C)   │  │  (I2C)   │  │
+│  └────┬─────┘  └─────┬─────┘  └────┬─────┘  └────┬─────┘  │
+│       │              │             │              │        │
+│       ▼              ▼             ▼              ▼        │
+│  ┌────────────────────────────────────────────────────┐    │
+│  │               Edge Processing Logic                │    │
+│  │  • Moving Average (Window = 5)                     │    │
+│  │  • Risk Classification (SAFE / WARNING / DANGER)   │    │
+│  │  • Fever Detection (threshold ≥ 32.5 °C)           │    │
+│  │  • Unix Epoch Conversion                           │    │
+│  └──────────────────────┬─────────────────────────────┘    │
+└─────────────────────────┼───────────────────────────────────┘
+                          │ MQTT → broker.hivemq.com:1883
+                          ▼
+             ┌────────────────────────┐
+             │        Node-RED        │
+             │  • Parse JSON payload  │
+             │  • Format for InfluxDB │
+             └────────────┬───────────┘
+                          │ HTTP Write API
+                          ▼
+             ┌────────────────────────┐
+             │        InfluxDB        │
+             │  Database: aupp_lab    │
+             │  Measurements:         │
+             │    • mq5               │
+             │    • mlx90614          │
+             │    • bmp280            │
+             └────────────┬───────────┘
+                          │ InfluxQL
+                          ▼
+             ┌────────────────────────┐
+             │        Grafana         │
+             │   8-Panel Dashboard    │
+             └────────────────────────┘
 ```
 
 ---
 
 ## 📊 Task 1 — Gas Filtering (Moving Average)
 
-### Description
-- Read MQ-5 using ESP32 ADC (12-bit resolution, 0–4095)
-- Store the **last 5 readings** in a sliding window
-- Compute **moving average** from stored readings
-- Print both raw and averaged values to Serial Monitor
-- Send averaged value to Node-RED via MQTT
+### Objective
+Read the MQ-5 sensor using the ESP32's 12-bit ADC (range: 0–4095), smooth the signal using a **sliding window moving average** (window size = 5), and publish the averaged value to Node-RED via MQTT.
 
-### Logic
+### Implementation
+
 ```python
 WINDOW = 5
 readings = []
@@ -135,7 +131,8 @@ def moving_average(val):
     return sum(readings) / len(readings)
 ```
 
-### Serial Output Evidence
+### Expected Serial Output
+
 ```
 [MQ5]  Raw: 2657 | Avg: 2678.80 | 2.16V | DANGER(3)
 [MQ5]  Raw: 2601 | Avg: 2645.20 | 2.13V | DANGER(3)
@@ -148,21 +145,26 @@ def moving_average(val):
 
 ### Classification Rules
 
-| ADC Average Value | Risk Level | risk_num |
-| ----------------- | ---------- | -------- |
-| < 2100            | ✅ SAFE     | 1        |
-| 2100 – 2599       | ⚠️ WARNING | 2        |
-| ≥ 2600            | 🚨 DANGER  | 3        |
+| ADC Average | Risk Level | `risk_num` |
+|---|---|---|
+| `< 2100` | ✅ SAFE | `1` |
+| `2100 – 2599` | ⚠️ WARNING | `2` |
+| `≥ 2600` | 🚨 DANGER | `3` |
 
-### Logic
+### Implementation
+
 ```python
 def classify(avg):
-    if avg < 2100:   return "SAFE",    1
-    elif avg < 2600: return "WARNING", 2
-    else:            return "DANGER",  3
+    if avg < 2100:
+        return "SAFE", 1
+    elif avg < 2600:
+        return "WARNING", 2
+    else:
+        return "DANGER", 3
 ```
 
 ### MQTT Payload
+
 ```json
 {
   "raw": 2657,
@@ -172,8 +174,8 @@ def classify(avg):
 }
 ```
 
-> **Note:** `risk_num` is sent as an integer (1/2/3) instead of a string
-> so InfluxDB can store it and Grafana can display it with color mappings.
+> **Why `risk_num`?**  
+> Sending an integer (`1`, `2`, or `3`) instead of a string allows InfluxDB to store it as a numeric field, enabling Grafana to apply colour-coded value mappings.
 
 ---
 
@@ -181,12 +183,13 @@ def classify(avg):
 
 ### Detection Rule
 
-| Condition | fever_flag | Meaning |
-|-----------|------------|---------|
-| `body_temp >= 32.5°C` | `1` | 🔴 Fever Detected |
-| `body_temp < 32.5°C` | `0` | 🟢 Normal |
+| Condition | `fever_flag` | Meaning |
+|---|---|---|
+| `body_temp >= 32.5 °C` | `1` | 🔴 Fever Detected |
+| `body_temp < 32.5 °C` | `0` | 🟢 Normal |
 
-### Logic
+### Implementation
+
 ```python
 FEVER_THRESHOLD = 32.5
 
@@ -195,6 +198,7 @@ def fever_detect(body_temp):
 ```
 
 ### MQTT Payload
+
 ```json
 {
   "ambient_temp": 32.37,
@@ -207,49 +211,54 @@ def fever_detect(body_temp):
 
 ## 📈 Task 4 — Pressure & Altitude Monitoring (Grafana)
 
-### Grafana Dashboard Panels
+### Dashboard Panels
 
-| #   | Panel Title            | Measurement | Field       | Type        |
-| --- | ---------------------- | ----------- | ----------- | ----------- |
-| 1   | Gas Average            | `mq5`       | `avg`       | Time Series |
-| 2   | Risk Level             | `mq5`       | `risk_num`  | Stat        |
-| 3   | Body Temperature Gauge | `mlx90614`  | `body_temp` | Gauge       |
-| 4   | Pressure Graph         | `bmp280`    | `pressure`  | Time Series |
-| 5   | Altitude Graph         | `bmp280`    | `altitude`  | Time Series |
-| 6   | Pressure hPa           | `bmp280`    | `pressure`  | Stat        |
-| 7   | Altitude Meters        | `bmp280`    | `altitude`  | Stat        |
-| 8   | DS3231 Timestamp       | `bmp280`    | `epoch`     | Stat        |
+| # | Panel Title | Measurement | Field | Visualization |
+|---|---|---|---|---|
+| 1 | Gas Average | `mq5` | `avg` | Time Series |
+| 2 | Risk Level | `mq5` | `risk_num` | Stat |
+| 3 | Body Temperature Gauge | `mlx90614` | `body_temp` | Gauge |
+| 4 | Pressure Graph | `bmp280` | `pressure` | Time Series |
+| 5 | Altitude Graph | `bmp280` | `altitude` | Time Series |
+| 6 | Pressure (hPa) | `bmp280` | `pressure` | Stat |
+| 7 | Altitude (m) | `bmp280` | `altitude` | Stat |
+| 8 | DS3231 Timestamp | `bmp280` | `epoch` | Stat |
 
 ### InfluxQL Queries
-```sql
--- Panel 1: Gas Average
-SELECT mean("avg") FROM "mq5" WHERE $timeFilter GROUP BY time($__interval) fill(null)
 
--- Panel 2: Risk Level
+```sql
+-- Panel 1: Gas Average (time series)
+SELECT mean("avg") FROM "mq5"
+WHERE $timeFilter GROUP BY time($__interval) fill(null)
+
+-- Panel 2: Risk Level (latest value)
 SELECT last("risk_num") FROM "mq5" WHERE $timeFilter
 
--- Panel 3: Body Temperature
+-- Panel 3: Body Temperature (latest value)
 SELECT last("body_temp") FROM "mlx90614" WHERE $timeFilter
 
--- Panel 4: Pressure Graph
-SELECT mean("pressure") FROM "bmp280" WHERE $timeFilter GROUP BY time($__interval) fill(null)
+-- Panel 4: Pressure Graph (time series)
+SELECT mean("pressure") FROM "bmp280"
+WHERE $timeFilter GROUP BY time($__interval) fill(null)
 
--- Panel 5: Altitude Graph
-SELECT mean("altitude") FROM "bmp280" WHERE $timeFilter GROUP BY time($__interval) fill(null)
+-- Panel 5: Altitude Graph (time series)
+SELECT mean("altitude") FROM "bmp280"
+WHERE $timeFilter GROUP BY time($__interval) fill(null)
 
--- Panel 6: Pressure hPa
+-- Panel 6: Pressure hPa (latest value)
 SELECT last("pressure") FROM "bmp280" WHERE $timeFilter
 
--- Panel 7: Altitude Meters
+-- Panel 7: Altitude Meters (latest value)
 SELECT last("altitude") FROM "bmp280" WHERE $timeFilter
 
--- Panel 8: DS3231 Timestamp
+-- Panel 8: DS3231 Timestamp (latest value)
 SELECT last("epoch") FROM "bmp280" WHERE $timeFilter
 ```
 
-### Risk Level Value Mappings
-| Value | Display Text | Color |
-|-------|-------------|-------|
+### Risk Level Value Mappings (Panel 2)
+
+| Value | Display | Colour |
+|---|---|---|
 | `1` | ✅ SAFE | 🟢 Green |
 | `2` | ⚠️ WARNING | 🟡 Yellow |
 | `3` | 🚨 DANGER | 🔴 Red |
@@ -258,42 +267,49 @@ SELECT last("epoch") FROM "bmp280" WHERE $timeFilter
 
 ## 🔌 Wiring
 
-### I2C Bus (BMP280 + DS3231 + MLX90614)
-| ESP32 Pin | Sensor Pin | Color |
-|-----------|------------|-------|
+### I2C Bus — BMP280, DS3231, MLX90614
+
+| ESP32 Pin | Sensor Pin | Wire Colour |
+|---|---|---|
 | GPIO 21 | SDA | Blue |
 | GPIO 22 | SCL | Yellow |
-| 3.3V | VCC | Red |
+| 3.3 V | VCC | Red |
+| GND | GND | Black |
+|
+### MQ-5 Gas Sensor
+
+| ESP32 Pin | Sensor Pin | Wire Colour |
+|---|---|---|
+| GPIO 33 | AO (Analog Out) | Green |
+| 5 V | VCC | Red |
 | GND | GND | Black |
 
-### MQ-5 Gas Sensor
-| ESP32 Pin | Sensor Pin | Color |
-|-----------|------------|-------|
-| GPIO 33 | AO (Analog Out) | Green |
-| 5V | VCC | Red |
-| GND | GND | Black |
+> ⚠️ The MQ-5 requires **5 V** for the heater element; the analogue output signal is safe to read directly on GPIO 33.
 
 ---
 
 ## 📡 MQTT Topics
 
-| Topic                  | Sensor          | Published Fields                               |
-| ---------------------- | --------------- | ---------------------------------------------- |
-| `/aupp/esp32/mq5`      | MQ-5            | `raw`, `avg`, `voltage`, `risk_num`            |
-| `/aupp/esp32/mlx90614` | MLX90614        | `ambient_temp`, `body_temp`, `fever_flag`      |
-| `/aupp/esp32/bmp280`   | BMP280 + DS3231 | `temperature`, `pressure`, `altitude`, `epoch` |
+| Topic | Sensor | Published Fields |
+|---|---|---|
+| `/aupp/esp32/mq5` | MQ-5 | `raw`, `avg`, `voltage`, `risk_num` |
+| `/aupp/esp32/mlx90614` | MLX90614 | `ambient_temp`, `body_temp`, `fever_flag` |
+| `/aupp/esp32/bmp280` | BMP280 + DS3231 | `temperature`, `pressure`, `altitude`, `epoch` |
 
-- **Broker:** `broker.hivemq.com`
-- **Port:** `1883`
-- **Interval:** Every `2 seconds`
+| Setting | Value |
+|---|---|
+| Broker | `broker.hivemq.com` |
+| Port | `1883` |
+| Publish interval | Every `2 seconds` |
 
 ---
 
 ## 🔄 Node-RED Flow
 
-Three MQTT-in flows, each connected to a Function node then InfluxDB out:
+Three independent pipelines: **MQTT In → Function → InfluxDB Out**
 
-### Function — MQ-5
+### Function Node — MQ-5
+
 ```javascript
 msg.measurement = "mq5";
 msg.payload = {
@@ -305,7 +321,8 @@ msg.payload = {
 return msg;
 ```
 
-### Function — MLX90614
+### Function Node — MLX90614
+
 ```javascript
 msg.measurement = "mlx90614";
 msg.payload = {
@@ -316,7 +333,8 @@ msg.payload = {
 return msg;
 ```
 
-### Function — BMP280
+### Function Node — BMP280
+
 ```javascript
 msg.measurement = "bmp280";
 msg.payload = {
@@ -333,21 +351,21 @@ return msg;
 ## 🗄️ InfluxDB Queries
 
 ```bash
-# Open InfluxDB shell
+# Open the InfluxDB CLI
 influx
 
-# Select database
+# Select the database
 USE aupp_lab
 
-# Show all measurements
+# List all measurements
 SHOW MEASUREMENTS
 
-# View latest 5 records from each sensor
+# View the 5 most recent records per sensor
 SELECT * FROM mq5      ORDER BY time DESC LIMIT 5
 SELECT * FROM mlx90614 ORDER BY time DESC LIMIT 5
 SELECT * FROM bmp280   ORDER BY time DESC LIMIT 5
 
-# Count total records
+# Count total stored records per sensor
 SELECT count(avg)       FROM mq5
 SELECT count(body_temp) FROM mlx90614
 SELECT count(pressure)  FROM bmp280
@@ -357,33 +375,44 @@ SELECT count(pressure)  FROM bmp280
 
 ## ⚙️ Setup Guide
 
-### Step 1 — Flash MicroPython to ESP32
+### Step 1 — Flash MicroPython to the ESP32
+
 ```bash
 esptool.py --port COM3 erase_flash
 esptool.py --port COM3 write_flash -z 0x1000 micropython.bin
 ```
 
 ### Step 2 — Upload Libraries via Thonny
+
+Upload the following files to the ESP32 filesystem:
+
 ```
 bmp280.py
-ds3231.py
+d3231.py
 mlx90614.py
 umqtt/simple.py
 ```
 
-### Step 3 — Configure WiFi in main.py
+### Step 3 — Configure Wi-Fi Credentials
+
+Edit `main.py`:
+
 ```python
-SSID, PASSWORD = "YourWiFi", "YourPassword"
+SSID     = "YourWiFiName"
+PASSWORD = "YourWiFiPassword"
 ```
 
-### Step 4 — Set DS3231 Time (first run only)
+### Step 4 — Set DS3231 Time (First Run Only)
+
 ```python
 rtc.set_time(2026, 3, 9, 23, 0, 0)
-# ⚠️ Comment out after first successful run
+# ⚠️ Comment out this line after the first successful run.
 ```
 
-### Step 5 — Run main.py in Thonny
-Click ▶️ Run and verify serial output:
+### Step 5 — Run `main.py` in Thonny
+
+Click ▶️ **Run** and verify the serial output:
+
 ```
 WiFi OK: ('192.168.x.x', ...)
 MQTT connected → broker.hivemq.com
@@ -392,17 +421,18 @@ MQTT connected → broker.hivemq.com
 [BMP]  Temp: 32.27°C | Pressure: 1012.32hPa | Altitude: -4.5m | Epoch: 1741561839000
 ```
 
-### Step 6 — Deploy Node-RED Flow
-- Import 3 MQTT-in flows
-- Set server: `broker.hivemq.com:1883`
-- Connect each to Function → InfluxDB out
-- Click Deploy
+### Step 6 — Deploy the Node-RED Flow
+
+1. Import `flows.json` into Node-RED.
+2. Set the MQTT broker to `broker.hivemq.com:1883`.
+3. Connect each pipeline: **MQTT In → Function → InfluxDB Out**.
+4. Click **Deploy**.
 
 ### Step 7 — Configure Grafana
-- Data source: InfluxDB → `http://localhost:8086`
-- Database: `aupp_lab`
-- Query language: `InfluxQL`
-- Add 8 panels using queries from Task 4
+
+1. Add a data source: **InfluxDB** → `http://localhost:8086`
+2. Set database to `aupp_lab` and query language to `InfluxQL`.
+3. Create a new dashboard and add **8 panels** using the queries listed in [Task 4](#-task-4--pressure--altitude-monitoring-grafana).
 
 ---
 
@@ -410,15 +440,12 @@ MQTT connected → broker.hivemq.com
 
 ```
 lab4/
-├── main.py              # Main ESP32 firmware (MicroPython)
-├── ds3231.py            # DS3231 RTC driver
-├── bmp280.py            # BMP280 pressure sensor driver
-├── mlx90614.py          # MLX90614 IR temperature driver
+├── main.py          # ESP32 firmware (MicroPython)
+├── bmp280.py        # BMP280 pressure sensor driver
+├── ds3231.py        # DS3231 RTC driver
+├── mlx90614.py      # MLX90614 IR temperature driver
 ├── umqtt/
-│   └── simple.py        # Lightweight MQTT client
-├── flows.json           # Node-RED flow export
-└── README.md            # This file
+│   └── simple.py    # Lightweight MQTT client
+├── flows.json       # Node-RED flow export
+└── README.md        # This file
 ```
-
-
-
