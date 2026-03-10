@@ -1,6 +1,5 @@
 # 🌡️ LAB 4: Multi-Sensor IoT Monitoring with Grafana Dashboard
 
-> **Course:** IoT Systems — Asian University for Technology & Innovation (AUPP)
 > **Platform:** ESP32 + MicroPython
 > **Tools:** Thonny | Node-RED | InfluxDB | Grafana
 
