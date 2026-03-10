@@ -377,11 +377,6 @@ SELECT count(pressure)  FROM bmp280
 
 ### Step 1 — Flash MicroPython to the ESP32
 
-```bash
-esptool.py --port COM3 erase_flash
-esptool.py --port COM3 write_flash -z 0x1000 micropython.bin
-```
-
 ### Step 2 — Upload Libraries via Thonny
 
 Upload the following files to the ESP32 filesystem:
