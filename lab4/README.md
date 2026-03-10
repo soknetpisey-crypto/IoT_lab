@@ -69,23 +69,23 @@ By completing this lab, you will be able to:
 ## 🏗️ System Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                            ESP32                            │
-│                                                             │
+┌───────────────────────────────────────────────────────────┐
+│                            ESP32                          │
+│                                                           │
 │  ┌──────────┐  ┌───────────┐  ┌──────────┐  ┌──────────┐  │
 │  │  MQ-5    │  │ MLX90614  │  │  BMP280  │  │  DS3231  │  │
 │  │ (GPIO33) │  │  (I2C)    │  │  (I2C)   │  │  (I2C)   │  │
 │  └────┬─────┘  └─────┬─────┘  └────┬─────┘  └────┬─────┘  │
-│       │              │             │              │        │
-│       ▼              ▼             ▼              ▼        │
-│  ┌────────────────────────────────────────────────────┐    │
-│  │               Edge Processing Logic                │    │
-│  │  • Moving Average (Window = 5)                     │    │
-│  │  • Risk Classification (SAFE / WARNING / DANGER)   │    │
-│  │  • Fever Detection (threshold ≥ 32.5 °C)           │    │
-│  │  • Unix Epoch Conversion                           │    │
-│  └──────────────────────┬─────────────────────────────┘    │
-└─────────────────────────┼───────────────────────────────────┘
+│       │              │             │              │       │
+│       ▼              ▼             ▼              ▼       │
+│  ┌────────────────────────────────────────────────────┐   │
+│  │               Edge Processing Logic                │   │
+│  │  • Moving Average (Window = 5)                     │   │
+│  │  • Risk Classification (SAFE / WARNING / DANGER)   │   │
+│  │  • Fever Detection (threshold ≥ 32.5 °C)           │   │
+│  │  • Unix Epoch Conversion                           │   │
+│  └──────────────────────┬─────────────────────────────┘   │
+└─────────────────────────┼─────────────────────────────────┘
                           │ MQTT → broker.hivemq.com:1883
                           ▼
              ┌────────────────────────┐
@@ -432,7 +432,7 @@ MQTT connected → broker.hivemq.com
 
 1. Add a data source: **InfluxDB** → `http://localhost:8086`
 2. Set database to `aupp_lab` and query language to `InfluxQL`.
-3. Create a new dashboard and add **8 panels** using the queries listed in [Task 4](#-task-4--pressure--altitude-monitoring-grafana).
+3. Create a new dashboard and add **8 panels** using the queries listed in [Task 4].
 
 ---
 
@@ -440,12 +440,30 @@ MQTT connected → broker.hivemq.com
 
 ```
 lab4/
-├── main.py          # ESP32 firmware (MicroPython)
-├── bmp280.py        # BMP280 pressure sensor driver
-├── ds3231.py        # DS3231 RTC driver
-├── mlx90614.py      # MLX90614 IR temperature driver
-├── umqtt/
-│   └── simple.py    # Lightweight MQTT client
-├── flows.json       # Node-RED flow export
-└── README.md        # This file
+├── Task 1/
+│   ├── lab4_task1.py        # MQ-5 moving average only
+│   ├── flows_task1.json     # Node-RED flow export
+│   ├── flowchart_task1.png  # Flowchart diagram
+│   ├── task1.png            # Serial / MQTT output screenshot
+│   └── task1_js.png         # Node-RED screenshot
+├── Task 2/
+│   ├── lab4_task2.py        # MQ-5 + risk classification (string)
+│   ├── flows_task2.json
+│   ├── flowchart_task2.png
+│   ├── Task2.png
+│   └── Task2_js.png
+├── Task 3/
+│   ├── lab4_task3.py        # All sensors + fever detection + risk_num + timestamp
+│   ├── flows_task3.json
+│   ├── flowchart_task3.png
+│   ├── Task3.png
+│   └── Task3_js.png
+├── Task 4/
+│   ├── lab4_task4.py        # All sensors + epoch (ms) + Grafana dashboard
+│   ├── flows_task4.json
+│   ├── flowchart_task4.png
+│   ├── Task4.png            # Node-RED screenshot
+│   └── Task4_db.png         # Grafana dashboard screenshot
+├── flowchart_llab4.png      # Overall lab flowchart
+└── README.md                # This file
 ```
