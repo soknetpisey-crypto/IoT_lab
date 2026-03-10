@@ -421,18 +421,5 @@ lab4/
 └── README.md            # This file
 ```
 
----
-
-## 📝 Submission Checklist
-
-| Item | File | Status |
-|------|------|--------|
-| ✅ MicroPython source | `main.py` | Required |
-| ✅ Flowchart | See below | Required |
-| ✅ Node-RED export | `flows.json` | Required |
-| ✅ InfluxDB screenshot | — | Required |
-| ✅ Grafana dashboard screenshot | — | Required |
-| ✅ README | `README.md` | Required |
-| ✅ Demo video | 60–90 seconds | Required |
 
 
