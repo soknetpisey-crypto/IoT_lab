@@ -20,7 +20,7 @@
 **Main Implementation File:** `MiniProjectFinal.py`
 
 ---
-# EXECUTIVE SUMMARY
+## EXECUTIVE SUMMARY
 This report presents the design and implementation of a Smart IoT Parking Management System using ESP32 and MicroPython. The system integrates physical sensors and actuators with cloud and local interfaces to provide real-time parking monitoring, automated gate operations, and remote manual control.
 
 The implementation includes:
@@ -41,24 +41,25 @@ Core engineering contributions include robust decision logic, multi-channel sync
 
 The final system satisfies all mandatory project requirements and demonstrates a complete embedded IoT solution suitable for practical deployment and future scaling.
 
-# TABLE OF CONTENTS
-1. [Introduction](#-Introduction)
-2. Project Overview  
-3. Project Learning Goals  
-4. Hardware Description  
-5. System Architecture  
-6. Software Architecture  
-7. IoT Integration  
-8. Working Process Explanation  
-9. Functional Requirements Mapping  
-10. Challenges Faced  
-11. Testing and Validation  
-12. Future Improvements  
-13. Conclusion  
-14. References  
-15. Appendices  
+## TABLE OF CONTENTS
 
-# LIST OF ABBREVIATIONS
+1. [Introduction](#-Introduction)
+2. [Project Overview](#Project-Overview)
+3. [Project Learning Goals](#Project-Learning-Goals)
+4. [Hardware Description](#Hardware-Description)
+5. [System Architecture](#System-Architecture)
+6. [Software Architecture](#Software-Architecture)
+7. [IoT Integration](#IoT-Integration)
+8. [Working Process Explanation](#Working-Process-Explanation)
+9. [Functional Requirements Mapping](#Functional-Requirements-Mapping)
+10. [Challenges Faced](#Challenges-Faced)
+11. [Testing and Validation](#Testing-and-Validation)
+12. [Future Improvements](#Future-Improvements)
+13. [Conclusion](#Conclusion)
+14. [References](#References)
+15. [Appendices](#Appendices)
+
+## LIST OF ABBREVIATIONS
 - **ESP32**: Embedded System Platform 32-bit MCU  
 - **IoT**: Internet of Things  
 - **GPIO**: General Purpose Input/Output  
@@ -83,7 +84,7 @@ This report documents architecture, implementation details, workflow, challenges
 
 ---
 
-# 2) PROJECT OVERVIEW
+## 2) PROJECT OVERVIEW
 Each team is required to design and implement a complete embedded IoT parking solution integrating mandatory hardware and three IoT platforms into one unified operational system.
 
 ### Delivered capabilities:
@@ -96,7 +97,7 @@ Each team is required to design and implement a complete embedded IoT parking so
 
 ---
 
-# 3) PROJECT LEARNING GOALS
+## 3) PROJECT LEARNING GOALS
 This project achieved the following goals:
 
 1. **Design a complete embedded IoT system**  
@@ -119,7 +120,7 @@ This project achieved the following goals:
 
 ---
 
-# 4) HARDWARE DESCRIPTION
+## 4) HARDWARE DESCRIPTION
 
 ## 4.1 Main Controller
 - **ESP32** running **MicroPython**
@@ -154,7 +155,7 @@ This project achieved the following goals:
 
 ---
 
-# 5) SYSTEM ARCHITECTURE
+## 5) SYSTEM ARCHITECTURE
 
 ## 5.1 High-Level Components
 1. **ESP32 Core Controller**
@@ -175,7 +176,7 @@ Remote commands (Telegram/Web/Blynk) → unified control handlers → synchroniz
 
 ---
 
-# 6) SOFTWARE ARCHITECTURE
+## 6) SOFTWARE ARCHITECTURE
 
 ## 6.1 Program Organization (`MiniProjectFinal.py`)
 The software is implemented in one script with clear functional sections:
@@ -220,7 +221,7 @@ HTTP endpoints:
 
 ---
 
-# 7) IoT INTEGRATION
+## 7) IoT INTEGRATION
 
 ## 7.1 Telegram Bot (Commands + Notifications)
 Implemented commands:
@@ -258,7 +259,7 @@ Special logic:
 
 ---
 
-# 8) WORKING PROCESS EXPLANATION
+## 8) WORKING PROCESS EXPLANATION
 
 ## 8.1 Boot Stage
 1. Initialize sensors, actuator outputs, display interfaces.
@@ -295,7 +296,7 @@ Special logic:
 
 ---
 
-# 9) FUNCTIONAL REQUIREMENTS MAPPING
+## 9) FUNCTIONAL REQUIREMENTS MAPPING
 
 | Functional Requirement                         | Implemented Method                      |
 | ---------------------------------------------- | --------------------------------------- |
@@ -311,7 +312,7 @@ Special logic:
 
 ---
 
-# 10) CHALLENGES FACED
+## 10) CHALLENGES FACED
 
 ## 10.1 Memory Outage with ESP32
 **Cause:** Limited heap with multiple libraries and dynamic strings.  
@@ -337,7 +338,7 @@ Special logic:
 
 ---
 
-# 11) TESTING AND VALIDATION
+## 11) TESTING AND VALIDATION
 
 ## 11.1 Functional Tests
 - Auto open when object enters threshold
@@ -359,7 +360,7 @@ Special logic:
 
 ---
 
-# 12) FUTURE IMPROVEMENTS
+## 12) FUTURE IMPROVEMENTS
 
 1. Move credentials to `secrets.py` and secure storage  
 2. Replace HTTP polling with MQTT + TLS  
@@ -372,13 +373,13 @@ Special logic:
 
 ---
 
-# 13) CONCLUSION
+## 13) CONCLUSION
 The Smart IoT Parking Management System successfully demonstrates a complete embedded IoT solution with real-time sensing, autonomous control, and multi-platform remote integration. The final implementation satisfies all required hardware, software, and functional criteria while addressing practical reliability issues in memory and networking.  
 This project provides a strong foundation for advanced smart parking deployments with future enhancements in security, scalability, and asynchronous architecture.
 
 ---
 
-# 14) REFERENCES
+## 14) REFERENCES
 1. ESP32 MicroPython documentation  
 2. MicroPython `machine`, `network`, `socket`, and `dht` modules  
 3. Telegram Bot API documentation  
@@ -387,7 +388,7 @@ This project provides a strong foundation for advanced smart parking deployments
 
 ---
 
-# 15) APPENDICES
+## 15) APPENDICES
 
 ## Appendix A: Pin Mapping
 - GPIO4: DHT11  
@@ -416,7 +417,7 @@ This project provides a strong foundation for advanced smart parking deployments
 ## Appendix C: Figure Placeholders and Diagrams Section
 
 ### Figure 1 — Overall System Architecture  
-`[Insert Figure 1: High-level architecture block diagram]`
+`<img scr="assets/"`
 
 ### Figure 2 — Hardware Wiring / Pin Mapping  
 `[Insert Figure 2: ESP32 wiring diagram]`
