@@ -75,7 +75,7 @@ The final system satisfies all mandatory project requirements and demonstrates a
 - **MQTT**: Message Queuing Telemetry Transport  
 - **TLS**: Transport Layer Security
 
-## 1. INTRODUCTION
+## 1) INTRODUCTION
 Modern parking management requires automation and live visibility to reduce manual effort, traffic delays, and uncertainty about slot availability. This project addresses these needs by implementing a complete Smart IoT Parking Management System on ESP32 with MicroPython.
 
 The system detects vehicles at the entrance, checks available slots, controls gate access, monitors environmental data, manages parking lights, and synchronizes data across Telegram, Web, and Blynk interfaces. It combines autonomous local control and remote manual intervention while maintaining consistent state behavior.
