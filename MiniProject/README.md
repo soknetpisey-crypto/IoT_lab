@@ -434,10 +434,10 @@ This project provides a strong foundation for advanced smart parking deployments
 `[Insert Figure 7A/7B/7C: Telegram command responses]`
 
 ### Figure 8 — Web Dashboard Screenshots  
-`[Insert Figure 8A/8B/8C: Dashboard + controls]`
+<img alt="image" src="assets/webinterface.png">
 
 ### Figure 9 — Blynk Screenshots  
-`[Insert Figure 9A/9B/9C: Blynk widgets and control]`
+<img alt="image" src="assets/miniprojectblynk.png">
 
 ### Figure 10 — Physical Prototype Photo  
 `[Insert Figure 10: Real hardware setup]`
