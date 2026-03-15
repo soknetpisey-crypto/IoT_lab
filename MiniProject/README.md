@@ -1,7 +1,8 @@
 # Mini Project: Smart IoT Parking Management System
 
-**Course:** Introduction to Internet of Things
-**Department:**  School of Digital Technologies
+---
+**Course:** Introduction to Internet of Things <br>
+**Department:**  School of Digital Technologies <br>
 **University:** American University of Phnom Penh (AUPP)
 
 **Prepared by:**  
@@ -10,9 +11,9 @@
 - NHEN, Sophamony
 - SOK, Netpiseay
 
-**Instructor:** Theara SENG
-**Class/Section:** 002 Introduction to Internet of Things
-**Academic Year:** Spring 2026  
+**Instructor:** Theara SENG <br>
+**Class/Section:** 002 Introduction to Internet of Things <br>
+**Academic Year:** Spring 2026  <br>
 **Submission Date:** March 14, 2026
 
 **Project Platform:** ESP32 + MicroPython  
