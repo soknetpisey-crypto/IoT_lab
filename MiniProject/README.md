@@ -417,7 +417,7 @@ This project provides a strong foundation for advanced smart parking deployments
 ## Appendix C: Figure Placeholders and Diagrams Section
 
 ### Figure 1 — Overall System Architecture  
-`<img scr="assets/System Architecture Block Diagram.png">`
+`<img src="assets/System Architecture Block Diagram.png">`
 
 ### Figure 2 — Hardware Wiring / Pin Mapping  
 `[Insert Figure 2: ESP32 wiring diagram]`
