@@ -421,28 +421,19 @@ This project provides a strong foundation for advanced smart parking deployments
 ### Figure 2 — Process Flow Diagram
 <img alt="image" src="assets/Process Flow Diagram.png">
 
-### Figure 4 — Main Loop Flowchart  
-`[Insert Figure 4: Runtime control loop flowchart]`
-
-### Figure 5 — Gate Decision Logic  
-`[Insert Figure 5: Auto/manual gate logic flowchart]`
-
-### Figure 6 — Light Decision Logic  
-`[Insert Figure 6: Manual/auto light control flowchart]`
-
-### Figure 7 — Telegram Screenshots  
+### Figure 3 — Telegram Screenshots  
 <img alt="image" src="assets/1telegram.png">
 <img alt="image" src="assets/telegram.png">
 <img alt="image" src="assets/telegram1.png">
 
-### Figure 8 — Web Dashboard Screenshots  
+### Figure 4 — Web Dashboard Screenshots  
 <img alt="image" src="assets/webinterface.png">
 
-### Figure 9 — Blynk Screenshots  
+### Figure 5 — Blynk Screenshots  
 <img alt="image" src="assets/miniprojectblynk.png">
 
-### Figure 10 — Physical Prototype Photo  
-`[Insert Figure 10: Real hardware setup]`
+### Figure 6 — Physical Prototype Photo  
+<img alt="image" src="assets/hardware.png">
 
 ### Figure 11 — Functional Test Matrix  
 `[Insert Figure 11: Pass/fail result table]`
