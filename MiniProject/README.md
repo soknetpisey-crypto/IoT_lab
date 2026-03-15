@@ -419,7 +419,19 @@ This project provides a strong foundation for advanced smart parking deployments
 <img alt="image" src="assets/System Architecture Block Diagram.png">
 
 ### Figure 2 — Hardware Wiring / Pin Mapping  
-`[Insert Figure 2: ESP32 wiring diagram]`
+Component,ESP32 Pin,Function / Notes
+DHT11 Sensor,GPIO 4,Temperature and Humidity Data
+Relay Module,GPIO 2,Controls Parking Lights (LED)
+Servo Motor,GPIO 13,Operates the Entry Gate (PWM)
+Ultrasonic (TRIG),GPIO 27,Triggers distance measurement
+Ultrasonic (ECHO),GPIO 26,Reads distance measurement
+IR Sensor (Slot 1),GPIO 25,Detects vehicle in Slot 1
+IR Sensor (Slot 2),GPIO 32,Detects vehicle in Slot 2
+IR Sensor (Slot 3),GPIO 33,Detects vehicle in Slot 3
+TM1637 (CLK),GPIO 17,Clock pin for 7-segment display
+TM1637 (DIO),GPIO 16,Data pin for 7-segment display
+I2C LCD (SDA),GPIO 21,I2C Data line
+I2C LCD (SCL),GPIO 22,I2C Clock line
 
 ### Figure 3 — Software Module Diagram  
 `[Insert Figure 3: Code module architecture]`
