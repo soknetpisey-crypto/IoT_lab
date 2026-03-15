@@ -43,21 +43,21 @@ The final system satisfies all mandatory project requirements and demonstrates a
 
 ## TABLE OF CONTENTS
 
-1. [Introduction](#-Introduction)
-2. [Project Overview](#-Project-Overview)
-3. [Project Learning Goals](#Project-Learning-Goals)
-4. [Hardware Description](#Hardware-Description)
-5. [System Architecture](#System-Architecture)
-6. [Software Architecture](#Software-Architecture)
-7. [IoT Integration](#IoT-Integration)
-8. [Working Process Explanation](#Working-Process-Explanation)
-9. [Functional Requirements Mapping](#Functional-Requirements-Mapping)
-10. [Challenges Faced](#Challenges-Faced)
-11. [Testing and Validation](#Testing-and-Validation)
-12. [Future Improvements](#Future-Improvements)
-13. [Conclusion](#Conclusion)
-14. [References](#References)
-15. [Appendices](#Appendices)
+1. [Introduction](#1-introduction)
+2. [Project Overview](#2-project-overview)
+3. [Project Learning Goals](#3-project-learning-goals)
+4. [Hardware Description](#4-hardware-description)
+5. [System Architecture](#5-system-architecture)
+6. [Software Architecture](#6-software-architecture)
+7. [IoT Integration](#7-iot-integration)
+8. [Working Process Explanation](#8-working-process-explanation)
+9. [Functional Requirements Mapping](#9-functional-requirements-mapping)
+10. [Challenges Faced](#10-challenges-faced)
+11. [Testing and Validation](#11-testing-and-validation)
+12. [Future Improvements](#12-future-improvements)
+13. [Conclusion](#13-conclusion)
+14. [References](#14-references)
+15. [Appendices](#15-appendices)
 
 ## LIST OF ABBREVIATIONS
 - **ESP32**: Embedded System Platform 32-bit MCU  
@@ -75,7 +75,7 @@ The final system satisfies all mandatory project requirements and demonstrates a
 - **MQTT**: Message Queuing Telemetry Transport  
 - **TLS**: Transport Layer Security
 
-## 1) INTRODUCTION
+## 1. INTRODUCTION
 Modern parking management requires automation and live visibility to reduce manual effort, traffic delays, and uncertainty about slot availability. This project addresses these needs by implementing a complete Smart IoT Parking Management System on ESP32 with MicroPython.
 
 The system detects vehicles at the entrance, checks available slots, controls gate access, monitors environmental data, manages parking lights, and synchronizes data across Telegram, Web, and Blynk interfaces. It combines autonomous local control and remote manual intervention while maintaining consistent state behavior.
@@ -206,7 +206,6 @@ The software is implemented in one script with clear functional sections:
 
 ## 6.5 Web Layer
 HTTP endpoints:
-- `/`
 - `/api/data`
 - `/api/gate/open`
 - `/api/gate/close`
