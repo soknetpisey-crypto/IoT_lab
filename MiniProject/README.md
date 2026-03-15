@@ -434,9 +434,3 @@ This project provides a strong foundation for advanced smart parking deployments
 
 ### Figure 6 — Physical Prototype Photo  
 <img alt="image" src="assets/hardware.png">
-
-### Figure 11 — Functional Test Matrix  
-`[Insert Figure 11: Pass/fail result table]`
-
-### Figure 12 — Network Recovery Sequence  
-`[Insert Figure 12: Timeout/reconnect/AP fallback sequence]`
