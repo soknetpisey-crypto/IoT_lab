@@ -44,7 +44,7 @@ The final system satisfies all mandatory project requirements and demonstrates a
 ## TABLE OF CONTENTS
 
 1. [Introduction](#-Introduction)
-2. [Project Overview](#Project-Overview)
+2. [Project Overview](#-Project-Overview)
 3. [Project Learning Goals](#Project-Learning-Goals)
 4. [Hardware Description](#Hardware-Description)
 5. [System Architecture](#System-Architecture)
