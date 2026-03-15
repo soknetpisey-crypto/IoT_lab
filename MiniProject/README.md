@@ -433,7 +433,7 @@ This project provides a strong foundation for advanced smart parking deployments
 ### Figure 7 — Telegram Screenshots  
 <img alt="image" src="assets/1telegram.png">
 <img alt="image" src="assets/telegram.png">
-<img alt="image" src="assets/1telegram1.png">
+<img alt="image" src="assets/telegram1.png">
 
 ### Figure 8 — Web Dashboard Screenshots  
 <img alt="image" src="assets/webinterface.png">
