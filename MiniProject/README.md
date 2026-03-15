@@ -17,7 +17,7 @@
 **Submission Date:** March 14, 2026
 
 **Project Platform:** ESP32 + MicroPython  
-**Main Implementation File:** `MiniProjectFinal.py`
+**Main Implementation File:** `MiniProjectFinal.py` <br>
 **Video Link:** https://youtu.be/ju56qgptkEI?feature=shared
 
 ---
