@@ -18,6 +18,7 @@
 
 **Project Platform:** ESP32 + MicroPython  
 **Main Implementation File:** `MiniProjectFinal.py`
+**Video Link:** https://youtu.be/ju56qgptkEI?feature=shared
 
 ---
 ## EXECUTIVE SUMMARY
