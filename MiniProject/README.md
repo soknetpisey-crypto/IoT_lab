@@ -433,4 +433,4 @@ This project provides a strong foundation for advanced smart parking deployments
 <img alt="image" src="assets/miniprojectblynk.png">
 
 ### Figure 6 — Physical Prototype Photo  
-<img alt="image" src="assets/hardware.png">
+<img alt="image" src="assets/hardware.jpg">
