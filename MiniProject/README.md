@@ -416,13 +416,26 @@ This project provides a strong foundation for advanced smart parking deployments
 ## Appendix C: Figure Placeholders and Diagrams Section
 
 ### Figure 1 — Overall System Architecture  
-<img alt="image" src="assets/System Architecture Block Diagram.png">
+<img alt="image" src="assets/System Architecture Block Diagram.png">  
 
-### Figure 2 — Hardware Wiring / Pin Mapping  
-
-
-### Figure 3 — Software Module Diagram  
-`[Insert Figure 3: Code module architecture]`
+### Figure 2 — Software Module Diagram  
+graph TD
+    A[MiniProjectFinal.py Core] --> B(Input/Sensor Layer)
+    A --> C(Output/Actuator Layer)
+    A --> D(Network & Cloud Layer)
+    
+    B --> B1[Ultrasonic HC-SR04]
+    B --> B2[DHT11]
+    B --> B3[IR Sensors x3]
+    
+    C --> C1[Servo Motor]
+    C --> C2[Relay/LED]
+    C --> C3[I2C LCD]
+    C --> C4[TM1637 Display]
+    
+    D --> D1[Local Web Server]
+    D --> D2[Telegram Bot API]
+    D --> D3[Blynk IoT API]
 
 ### Figure 4 — Main Loop Flowchart  
 `[Insert Figure 4: Runtime control loop flowchart]`
