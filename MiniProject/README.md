@@ -431,7 +431,9 @@ This project provides a strong foundation for advanced smart parking deployments
 `[Insert Figure 6: Manual/auto light control flowchart]`
 
 ### Figure 7 — Telegram Screenshots  
-`[Insert Figure 7A/7B/7C: Telegram command responses]`
+<img alt="image" src="assets/1telegram.png">
+<img alt="image" src="assets/telegram.png">
+<img alt="image" src="assets/1telegram1.png">
 
 ### Figure 8 — Web Dashboard Screenshots  
 <img alt="image" src="assets/webinterface.png">
