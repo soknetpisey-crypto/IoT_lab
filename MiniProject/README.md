@@ -42,7 +42,7 @@ Core engineering contributions include robust decision logic, multi-channel sync
 The final system satisfies all mandatory project requirements and demonstrates a complete embedded IoT solution suitable for practical deployment and future scaling.
 
 # TABLE OF CONTENTS
-1. Introduction  (#-Introduction)
+1. [Introduction](#-Introduction)
 2. Project Overview  
 3. Project Learning Goals  
 4. Hardware Description  
