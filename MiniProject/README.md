@@ -1,5 +1,4 @@
 # Mini Project: Smart IoT Parking Management System
----
 
 **Course:** Introduction to Internet of Things
 **Department:**  School of Digital Technologies
