@@ -8,3 +8,4 @@ In this lab, student will design and implement a color-based IoT control system 
 - Design a mobile app using MIT App Inventor.
 - Implement combined automatic and manual control systems.
 ## Connection
+<img width="960" height="1280" alt="image" src="https://github.com/user-attachments/assets/1a95a34b-b68d-45aa-ba94-fe875242a520" />
