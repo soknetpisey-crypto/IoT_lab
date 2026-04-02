@@ -4,3 +4,7 @@ In this lab, student will design and implement a color-based IoT control system 
 - Integrate 12C sensor (TCS34725) with ESP32.
 - Implement rule-based color classification logic.
 - Control NeoPixel LED using RGB values. 
+- Control DC motor speed using PWM.
+- Design a mobile app using MIT App Inventor.
+- Implement combined automatic and manual control systems.
+## Connection
