@@ -71,6 +71,18 @@ The mobile application includes:
 - Send manual motor commands
 - Send manual RGB values
 
+## How the Code Works
+### Sensor Reading
+The ESP32 reads RGB values from the TCS34725 using I2C communication.
+### Color Detection
+The program compares RGB values to determine the dominant color.
+### NeoPixel Control
+The NeoPixel LED is updated based on detected or manually selected RGB values.
+### Motor Control
+PWM signals control motor speed depending on the detected color.
+### App Communication
+The ESP32 sends detected color data to the MIT App and receives manual commands.
+
 ## Tasks & Checkpoints
 ### Task 1 - RGB Reading
 - Read RGB values from TCS34725.
