@@ -76,6 +76,8 @@ The mobile application includes:
 - Read RGB values from TCS34725.
 - Print values to Serial Monitor.
 
+<img width="1180" height="1001" alt="image" src="https://github.com/user-attachments/assets/f58cde49-15c8-48c5-b07e-a539cb6d9a3e" />
+
 ### Task 2 - Color Classification
 Classification Rules:
 - R > G and R > B → RED
