@@ -45,3 +45,14 @@ In this lab, student will design and implement a color-based IoT control system 
 | IN1 | OUT1 |
 | IN2 | OUT2 |
 
+## System Working Principle
+The ESP32 continuously reads RGB values from the TCS34725 sensor. Based on the highest RGB value, the system classifies the detected color and performs control
+actions.
+
+###Automatic Control Logic
+| Detect Color | NeoPixel Color | Motor PWM |
+|----------|-----------|-----------|
+| RED | Red | 700 |
+| GREEN | Green| 500 |
+| BLUE | Blue | 300 |
+
