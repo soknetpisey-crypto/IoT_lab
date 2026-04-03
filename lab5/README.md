@@ -90,14 +90,21 @@ Video Link: https://youtu.be/du1vlYou0J8
 - GREEN → NeoPixel shows Green
 - BLUE → NeoPixel shows Blue
 
+Video Link: https://youtu.be/dHLLuI_ZDgw
 ### Task 4 - Motor Control (PWM)
 - RED → PWM = 700
 - GREEN → PWM = 500
 - BLUE → PWM = 300
 
+Video Link: https://youtu.be/y_8rCLh8Y5s
 ### Task 5 - MIT App Integration
 App Requirements:
 - Display detected color (Label).
 - Buttons: Forward, Stop, Backward.
 - RGB input boxes (R, G, B).
 - Button to set NeoPixel color manually.
+
+Video Link: 
+
+## Flowchart
+<img width="1195" height="1315" alt="image" src="https://github.com/user-attachments/assets/6e2eb909-4fea-4fe5-a717-986ea6e85df1" />
