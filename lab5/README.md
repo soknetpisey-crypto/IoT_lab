@@ -84,6 +84,7 @@ Classification Rules:
 - G > R and G > B → GREEN
 - B > R and B > G → BLUE
 
+Video Link: https://youtu.be/du1vlYou0J8
 ### Task 3 - NeoPixel Control
 - RED → NeoPixel shows Red
 - GREEN → NeoPixel shows Green
