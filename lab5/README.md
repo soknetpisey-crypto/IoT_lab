@@ -56,3 +56,18 @@ actions.
 | GREEN | Green| 500 |
 | BLUE | Blue | 300 |
 
+## MIT App Inventor Interface
+The mobile application includes:
+### Display Components
+- Label showing detected color
+### Control Components
+- Forward button
+- Stop button
+- Backward button
+- RGB input text boxes
+- Set Color button
+### The app communicates with ESP32 to:
+- Display detected color
+- Send manual motor commands
+- Send manual RGB values
+  
