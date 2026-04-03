@@ -49,7 +49,7 @@ In this lab, student will design and implement a color-based IoT control system 
 The ESP32 continuously reads RGB values from the TCS34725 sensor. Based on the highest RGB value, the system classifies the detected color and performs control
 actions.
 
-###Automatic Control Logic
+### Automatic Control Logic
 | Detect Color | NeoPixel Color | Motor PWM |
 |----------|-----------|-----------|
 | RED | Red | 700 |
