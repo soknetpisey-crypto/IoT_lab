@@ -25,21 +25,23 @@ In this lab, student will design and implement a color-based IoT control system 
 | GND | GND |
 | 3V3 | VCC/3.3V |
 
-#### Driver Motor → ESP32
-| Driver Motor | ESP32 Pin |
+#### L298N → ESP32
+| L298N | ESP32 Pin |
 |----------|-----------|
+| ENA | GPIO 14 (D14) |
+| IN1 | GPIO 26 (D26) |
+| IN2 | GPIO 27 (D27) |
 | GND | GND |
 
-#### Driver Motor → Power Supply
-| Driver Motor | Power Supply |
+#### L298N → Power Supply
+| L298N | Power Supply |
 |----------|-----------|
-| VCC | VCC/5V |
-| OUT | GPIO 12 (D12) |
-| GND | GND |
+| +12V | +6V |
+| GND | -6V |
 
-#### IR Sensor → ESP32
-| IR Sensor | ESP32 Pin |
+#### DC Motor → L298N
+| DC Motor |L298N |
 |----------|-----------|
-| VCC | VCC/5V |
-| OUT | GPIO 12 (D12) |
-| GND | GND |
+| IN1 | OUT1 |
+| IN2 | OUT2 |
+
