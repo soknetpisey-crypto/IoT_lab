@@ -10,22 +10,28 @@ In this lab, student will design and implement a color-based IoT control system 
 ## Connection
 <img width="960" height="1280" alt="image" src="https://github.com/nsmony/IoT_lab/blob/main/lab5/Screenshot%202026-04-02%20125528.png" />
 
-#### IR Sensor → ESP32
-| IR Sensor | ESP32 Pin |
+#### WS2812 → ESP32
+| WS2812 | ESP32 Pin |
 |----------|-----------|
-| VCC | VCC/5V |
-| OUT | GPIO 12 (D12) |
+| DI | GPIO 23 (D23) |
+| 5V | 5V |
 | GND | GND |
 
-#### IR Sensor → ESP32
-| IR Sensor | ESP32 Pin |
+#### TCS34725 → ESP32
+| TCS34725 | ESP32 Pin |
 |----------|-----------|
-| VCC | VCC/5V |
-| OUT | GPIO 12 (D12) |
+| SLC | GPIO 22 (D22) |
+| SDA | GPIO 21 (D21) |
+| GND | GND |
+| 3V3 | VCC/3.3V |
+
+#### Driver Motor → ESP32
+| Driver Motor | ESP32 Pin |
+|----------|-----------|
 | GND | GND |
 
-#### IR Sensor → ESP32
-| IR Sensor | ESP32 Pin |
+#### Driver Motor → Power Supply
+| Driver Motor | Power Supply |
 |----------|-----------|
 | VCC | VCC/5V |
 | OUT | GPIO 12 (D12) |
