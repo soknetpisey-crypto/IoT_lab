@@ -70,4 +70,31 @@ The mobile application includes:
 - Display detected color
 - Send manual motor commands
 - Send manual RGB values
-  
+
+## Tasks & Checkpoints
+### Task 1 - RGB Reading
+- Read RGB values from TCS34725.
+- Print values to Serial Monitor.
+
+### Task 2 - Color Classification
+Classification Rules:
+- R > G and R > B → RED
+- G > R and G > B → GREEN
+- B > R and B > G → BLUE
+
+### Task 3 - NeoPixel Control
+- RED → NeoPixel shows Red
+- GREEN → NeoPixel shows Green
+- BLUE → NeoPixel shows Blue
+
+### Task 4 - Motor Control (PWM)
+- RED → PWM = 700
+- GREEN → PWM = 500
+- BLUE → PWM = 300
+
+### Task 5 - MIT App Integration
+App Requirements:
+- Display detected color (Label).
+- Buttons: Forward, Stop, Backward.
+- RGB input boxes (R, G, B).
+- Button to set NeoPixel color manually.
