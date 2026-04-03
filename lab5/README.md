@@ -9,3 +9,31 @@ In this lab, student will design and implement a color-based IoT control system 
 - Implement combined automatic and manual control systems.
 ## Connection
 <img width="960" height="1280" alt="image" src="https://github.com/nsmony/IoT_lab/blob/main/lab5/Screenshot%202026-04-02%20125528.png" />
+
+#### IR Sensor → ESP32
+| IR Sensor | ESP32 Pin |
+|----------|-----------|
+| VCC | VCC/5V |
+| OUT | GPIO 12 (D12) |
+| GND | GND |
+
+#### IR Sensor → ESP32
+| IR Sensor | ESP32 Pin |
+|----------|-----------|
+| VCC | VCC/5V |
+| OUT | GPIO 12 (D12) |
+| GND | GND |
+
+#### IR Sensor → ESP32
+| IR Sensor | ESP32 Pin |
+|----------|-----------|
+| VCC | VCC/5V |
+| OUT | GPIO 12 (D12) |
+| GND | GND |
+
+#### IR Sensor → ESP32
+| IR Sensor | ESP32 Pin |
+|----------|-----------|
+| VCC | VCC/5V |
+| OUT | GPIO 12 (D12) |
+| GND | GND |
