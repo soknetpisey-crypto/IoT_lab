@@ -116,7 +116,7 @@ App Requirements:
 - RGB input boxes (R, G, B).
 - Button to set NeoPixel color manually.
 
-Video Link: 
+Video Link: https://youtu.be/zBLTSiWsihE
 
 ## Flowchart
 <img width="1195" height="1315" alt="image" src="https://github.com/user-attachments/assets/6e2eb909-4fea-4fe5-a717-986ea6e85df1" />
