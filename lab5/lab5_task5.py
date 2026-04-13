@@ -58,7 +58,6 @@ def motor_stop():
     ena.duty(0)
 
 def set_neopixel_auto(color):
-    # FIX 2: Dimmed brightness to 30 to prevent voltage drops (brownouts) that crash the sensor
     if color == "RED":
         rgb = (255, 0, 0)
     elif color == "GREEN":
@@ -66,7 +65,7 @@ def set_neopixel_auto(color):
     elif color == "BLUE":
         rgb = (0, 255, 30)
     else:
-        rgb = (0, 0, 0) # Turn off if UNKNOWN
+        rgb = (0, 0, 0) 
         
     for i in range(NUM_LEDS):
         np[i] = rgb
@@ -184,5 +183,4 @@ while True:
     except OSError:
         pass
     
-    # FIX 3: Increased delay to 0.2s to give the sensor integration time and stabilize the loop
     time.sleep(0.2)
