@@ -34,3 +34,61 @@ an SD card, and stores data remotely in Google Firestore. A buzzer provides real
 - RFID Cards/Tags
 
 ## Pin Configuration
+#### RC522 → ESP32
+| RC522 Pin | ESP32 Pin |
+|----------|-----------|
+| SDA (SS) | GPIO 16 (D16) |
+| SCK | GPIO 18 (D18) |
+| MOSI | GPIO 23 (D23) |
+| MISO | GPIO 19 (D19) |
+| RST | GPIO 22 (D22) |
+| GND | GND |
+| 3.3V | 3.3V |
+
+#### SD Card → ESP32
+| SD Pin | ESP32 Pin |
+|----------|-----------|
+| CS | GPIO 13 (D13) |
+| SCK | GPIO 14 (D14) |
+| MOSI | GPIO 15 (D15) |
+| MISO | GPIO 2 (D2) |
+
+#### Buzzer → ESP32
+| Buzzer Pin | ESP32 Pin |
+|----------|-----------|
+| + | 5V) |
+| - | GND |
+| S | GPIO 4 (D4) |
+
+## Firestore Setup
+1. Create a project in Firebase
+2. Enable Firebase Database
+3. Copy the project ID
+4. Update in the code
+
+## CSV Format 
+Data stored in SD card: <br>
+UID, Name, StudentID, Major, DateTime <br>
+Example: <br>
+12345678,Kim Taehyung,2023001,IT,2025-03-10 10:15:30 <br>
+
+## Task 
+1. Read UID from RFID card
+- Detect card and retrieve its unique ID (UID)
+2. Match UID with student database
+- Compare UID with predefined data
+- If found ->valid student
+- If not -> unknown card
+3. Generate current datetime
+- Format:
+YYYY-MM-DD HH:MM:SS
+4. If UID is valid:
+- Activate buzzer for 0.3 seconds
+- Save data to SD card (CSV format):
+UID, Name, StudentID, Major, DateTime
+- Send data to Firestore
+5. If UID is invalid:
+- Activate buzzer for 3 seconds
+- Display: "Unknown Card"
+- Do not save or send data
+Evidence Video: https://youtu.be/RvyzR_OVraE
