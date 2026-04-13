@@ -80,7 +80,7 @@ Example: <br>
 - If found ->valid student
 - If not -> unknown card
 3. Generate current datetime
-- Format:
+- Format: <br>
 YYYY-MM-DD HH:MM:SS
 4. If UID is valid:
 - Activate buzzer for 0.3 seconds
