@@ -6,8 +6,8 @@ import time
 import tcs34725
 
 # ─── WiFi Setup ─────────────────────────────────────
-SSID = "Nhin"
-PASSWORD = "nhin1979"
+SSID = ""
+PASSWORD = ""
 
 # ─── Motor Setup ────────────────────────
 in1 = Pin(26, Pin.OUT)
@@ -60,11 +60,11 @@ def motor_stop():
 def set_neopixel_auto(color):
     # FIX 2: Dimmed brightness to 30 to prevent voltage drops (brownouts) that crash the sensor
     if color == "RED":
-        rgb = (30, 0, 0)
+        rgb = (255, 0, 0)
     elif color == "GREEN":
-        rgb = (0, 30, 0)
+        rgb = (0, 255, 0)
     elif color == "BLUE":
-        rgb = (0, 0, 30)
+        rgb = (0, 255, 30)
     else:
         rgb = (0, 0, 0) # Turn off if UNKNOWN
         
