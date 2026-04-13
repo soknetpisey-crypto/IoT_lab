@@ -90,5 +90,5 @@ UID, Name, StudentID, Major, DateTime
 5. If UID is invalid:
 - Activate buzzer for 3 seconds
 - Display: "Unknown Card"
-- Do not save or send data
+- Do not save or send data <br>
 Evidence Video: https://youtu.be/RvyzR_OVraE
