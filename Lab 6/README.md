@@ -33,6 +33,9 @@ an SD card, and stores data remotely in Google Firestore. A buzzer provides real
 - Jumper Wires
 - RFID Cards/Tags
 
+## Connection 
+<img width="1082" height="583" alt="image" src="https://github.com/user-attachments/assets/fd1ff859-f53e-4a87-b305-0d969d59c327" />
+
 ## Pin Configuration
 #### RC522 → ESP32
 | RC522 Pin | ESP32 Pin |
