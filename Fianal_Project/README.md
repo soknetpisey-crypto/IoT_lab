@@ -40,6 +40,33 @@ Input -> Edge Processing -> Output -> Action
 - Low-cost and scalable.
 ### VI. Methodology 
 #### 1. System Design
-First, design the overall system, including sensors, camera, and how they connect together.
+Design connections between ESP32, sensors, camera, actuators, and internet connectivity.
 #### 2. Data Processing
-The collected data is processed on a local, texture, or environment that may indicate spoilage.
+Process real-time data locally using AI or rule-based logic.
+#### 3. Spoilage Detection
+Detect color changes, texture issues, and environmental risks.
+#### 4. Automated Response
+Close gate and trigger alerts is spoilage detected
+#### 5. Alert System
+Display warnings on LCD and online web dashboard
+#### 6. Testing & Evaluation
+Test under different conditions to measure accuracy and performance.
+### VII. Components
+- ESP32
+- ESP32-CAM
+- DHT11 Sensor
+- 12C LCD Display
+- IR Sensor
+- Servo Motor
+- 2 DC Motor
+- Power Supply
+### VIII. How it works
+1. Capture image of stored fruits
+2. Collect environmental data from sensors
+3. Process data using AI model
+4. Detect spoilage condition
+5. Send alert to user.
+### IX. Results
+- Early detection of spoilage
+- Improved accuracy using multi-modal data
+- Reduced food loss in storage
