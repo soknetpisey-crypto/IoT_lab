@@ -5,4 +5,12 @@ This project, AgriSafe Rot-Spotter. A Multi-Modal Edge-AI System for Early Post-
 ### II. Objective
 - To build an IoT system to monitor fruits and vegetables in real time.
 - To detect early signs of spoilage using ESP32 camera and images.
-- To use 
+- To use AI on a local device for fast data processing.
+- To reduce food waste by giving early warnings.
+- To create a simple and low-cost system that is easy to use.
+- To monitor chemical emissions, environmental conditions, and visual texture changes using on-device AI vision. 
+### III. Methodology 
+#### 1. System Design
+First, design the overall system, including sensors, camera, and how they connect together.
+#### 2. Data Processing
+The collected data is processed on a local, texture, or environment that may indicate spoilage.
